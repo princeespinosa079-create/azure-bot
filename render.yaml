@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: azure-bot
+    runtime: docker
+    dockerfilePath: ./bot/Dockerfile
+    dockerContext: .
+    plan: free
+    autoDeploy: true
+    healthCheckPath: /
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: PASTEFY_TOKEN
+        sync: false
+      - key: LOADING_EMOJI
+        sync: false
